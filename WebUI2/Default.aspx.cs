@@ -54,7 +54,7 @@ namespace WebUI2
             else
             {
                 double.TryParse(width.Value, out TheBrowserWidth);
-
+                Trace.Write(string.Format("Browser width is {0}", TheBrowserWidth));
                 DispWidth = (int)(TheBrowserWidth / 2); //half screen
                 DispWidth = DispWidth > 400 ? 400 : (int)TheBrowserWidth;
                 //double.TryParse(height.Value, out TheBrowserHeight);
@@ -89,10 +89,10 @@ namespace WebUI2
                         string ImageUrl = GetImageURL(btImage);
 
                         Image1.ImageUrl = ImageUrl;
-                        Image1.Width = (int)DispWidth;
+                        //Image1.Width = (int)DispWidth;
                         double ratio = (double)DispWidth / image.Width;
                         int DispHeight= (int)(image.Height * ratio);
-                        Image1.Height = DispHeight;
+                        //Image1.Height = DispHeight;
 
 
 
@@ -165,10 +165,10 @@ namespace WebUI2
                         string ImageUrl = GetImageURL(btImage);
 
                         Image2.ImageUrl = ImageUrl;
-                        Image2.Width = (int)DispWidth;
+                        //Image2.Width = (int)DispWidth;
                         double ratio = (double)DispWidth / image.Width;
                         int DispHeight = (int)(image.Height * ratio);
-                        Image2.Height = DispHeight;
+                        //Image2.Height = DispHeight;
 
                         System.Drawing.Image SmallImage = btImage.Length > 4 * 1024* 1024 ? resizeImage(image, new Size(DispWidth, DispHeight)) : image;
 
@@ -314,7 +314,7 @@ namespace WebUI2
             // Call face to face verification, verify REST API supports one face to one face verification only
             // Here, we handle single face image only
             StringBuilder sb = new StringBuilder();
-
+            StringBuilder sbCap = new StringBuilder();
             if (PhotoPair.Count == 2)
             {
                 //sb.AppendLine("Verifying...");
@@ -327,7 +327,8 @@ namespace WebUI2
 
                 if ((gender1 != null) && (gender2 != null) && (gender1 != gender2))
                 {
-                    lblRes.Text = "逗比吗？泰国来的吧！";
+                    lblCap.Text = "逗比吗？";
+                    lblRes.Text = "泰国来的吧?";
                     return;
                 }
                 //sb.AppendLine(string.Format("Request: Verifying face {0} and {1}", faceId1, faceId2));
@@ -341,7 +342,8 @@ namespace WebUI2
                     // Verification result contains IsIdentical (true or false) and Confidence (in range 0.0 ~ 1.0),
                     // here we update verify result on UI by VerifyResult binding
                     //sb.AppendLine(string.Format("{0} ({1:0.0})", res.IsIdentical ? "Equals" : "Does not equal", res.Confidence));
-                    sb.AppendLine(string.Format("我脚着{0}%{1}{2}", confid, res.IsIdentical ? "是" : "不是", genText));
+                    sbCap.AppendLine(string.Format("{0}{1}！", res.IsIdentical ? "是" : "不是", genText));
+                    sb.AppendLine(string.Format("向毛主席保证，我有{0}%把握", confid));
                     // sb = string.Format("Response: Success. Face {0} and {1} {2} to the same person", faceId1, faceId2, res.IsIdentical ? "belong" : "not belong");
                 }
                 catch (ClientException ex)
@@ -355,7 +357,7 @@ namespace WebUI2
                 sb.AppendLine("Verification accepts two faces as input, please pick images with only one detectable face in it.");
             }
 
-            //lblRes.Width = 300;
+            lblCap.Text = sbCap.ToString();
             lblRes.Text = sb.ToString();
 
         }
