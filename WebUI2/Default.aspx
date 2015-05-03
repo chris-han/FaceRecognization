@@ -6,7 +6,8 @@
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <%--  <meta name="viewport" content="width=device-width, initial-scale=1" />--%>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="" />
     <meta name="author" content="" />
 
@@ -83,6 +84,7 @@
 
 
                 <div class="row">
+
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Catch Me!</h1>
                         <p class="intro-text">
@@ -95,7 +97,7 @@
                         </p>
 
                         <div class="row">
-                            <div class="col-lg-8 col-lg-offset-2">
+                            <div class="col-lg-12">
 
                                 <ul class="list-inline">
                                     <li class="media-left">
@@ -119,7 +121,11 @@
                                     </li>
                                 </ul>
                             </div>
+
+
                         </div>
+
+
 
                         <%--                            <div class="ui-grid-a">
                                 <div class="ui-block-a">
@@ -142,8 +148,8 @@
                                     <img src="img/程慕阳1.jpg" style="display: block; margin: 0 auto" />
                                 </div>
                             </div>--%>
-                                                <div class="row">
-                            <div class="col-lg-8 col-lg-offset-2">
+ <div class="row">
+                            <div class="col-lg-8">
 
                         <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/img/catchme.png" OnClick="ImageButton2_Click" BorderStyle="None" CssClass="btn-circle" EnableTheming="False" />
                         <br />
