@@ -14,6 +14,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Drawing.Imaging;
 using System.Drawing;
+using System.Configuration;
 
 namespace WebUI2
 {
@@ -22,7 +23,7 @@ namespace WebUI2
         /// <summary>
         /// FaceSDK subscription key
         /// </summary>
-        private readonly string _subscriptionKey = "be117d0cc90a4e8ba2fa2b00e0ddb766";
+        private readonly string _subscriptionKey = ConfigurationManager.AppSettings["FaceAPIKey"].ToString();
         private static FaceServiceClient _instance;
         private double TheBrowserWidth;
         private int DispWidth;

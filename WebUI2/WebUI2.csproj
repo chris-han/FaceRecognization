@@ -143,6 +143,7 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\catchme - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\catchme - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\catchme__test.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
