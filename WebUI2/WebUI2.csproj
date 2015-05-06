@@ -71,7 +71,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Mianzhi.aspx" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.woff" />
@@ -112,6 +111,7 @@
     <Content Include="less\mixins.less" />
     <Content Include="less\variables.less" />
     <Content Include="LICENSE" />
+    <Content Include="Mianzhi.aspx" />
     <Content Include="newrelic\Extensions\CoreInstrumentation.xml" />
     <Content Include="newrelic\Extensions\NewRelic.Collections.dll" />
     <Content Include="newrelic\Extensions\NewRelic.Core.dll" />
@@ -190,13 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CallAmlService.cs" />
-    <Compile Include="Mianzhi.aspx.cs">
-      <DependentUpon>Mianzhi.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Mianzhi.aspx.designer.cs">
-      <DependentUpon>Mianzhi.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,6 +200,13 @@
     <Compile Include="Face.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Mianzhi.aspx.cs">
+      <DependentUpon>Mianzhi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mianzhi.aspx.designer.cs">
+      <DependentUpon>Mianzhi.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIHelper.cs" />
